@@ -1,0 +1,60 @@
+"Games"
+{
+	"#default"
+	{
+		"Keys"
+		{
+			"IGameMovement"		"GameMovement001"
+
+			"IServerGameEnts"	"ServerGameEnts001"
+		}
+
+		"Signatures"
+		{
+			"CreateInterface"
+			{
+				"library"		"server"
+				"windows"		"@CreateInterface"
+				"linux"			"@CreateInterface"
+			}
+		}
+
+		"Offsets"
+		{
+			"ProcessMovement"
+			{
+				"windows"		"1"
+				"linux"			"2"
+			}
+		}
+	}
+
+	"cstrike"
+	{
+		"Signatures"
+		{
+			"CBaseVPhysicsTrigger::PassesTriggerFilters"
+			{
+				"library"		"server"
+				"windows"		"\x53\x55\x56\x8B\x74\x24\x10\xB3\x06"
+				"linux"			"@_ZN20CBaseVPhysicsTrigger20PassesTriggerFiltersEP11CBaseEntity"
+			}
+
+			"CBaseTrigger::PassesTriggerFilters"
+			{
+				"library"		"server"
+				"windows"		"\x56\x8B\x74\x24\x08\x57\x8B\xF9\x8B\x87\xA4\x00\x00\x00"
+				"linux"			"@_ZN12CBaseTrigger20PassesTriggerFiltersEP11CBaseEntity"
+			}
+		}
+
+		"Offsets"
+		{
+			"IServerGameEnts::MarkEntitiesAsTouching"
+			{
+				"windows"	"2"
+				"linux"		"3"
+			}
+		}
+	}
+}
